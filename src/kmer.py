@@ -10,6 +10,14 @@ def kmer(x: str, k: int) -> list[str]:
 
     FIXME: do you want more tests here?
     """
+    for letter in x:
+        i = 0
+        while i < k:
+            result = list.append
+
+
+        
+
     ...
 
 
