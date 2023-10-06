@@ -1,4 +1,5 @@
 import doctest
+import pprint
 
 
 def kmer(x: str, k: int):
@@ -7,40 +8,42 @@ def kmer(x: str, k: int):
 
     >>> kmer('agtagtcg', 3)
     ['agt', 'gta', 'tag', 'agt', 'gtc', 'tcg']
-
-    FIXME: do you want more tests here?
     """
     result = []
     for i in range(0,len(x)-k+1):
         substring = x[i:i+k]
         result.append(substring)
-    return result
+    return result    
+    ... 
 
 
-        
-... 
-
-
-def unique_kmers(x: str, k: int) -> list[str]:
+def unique_kmers(x: str, k: int):
     """
     Computer all unique k-mers of x.
 
-    FIXME: do you want more tests here?
+    >>> unique_kmers('tatatgtf',3)
+    ['tat', 'ata', 'atg', 'tgt', 'gtf']
     """
-    # result = {}
-    # for i in range(0,len(x)-k+1):
-    #     substring = x[i:i+k]
-    #     result[substring] = None
-    # result_uniq = list(result.keys())
-    # print (result_uniq)
-    # return result_uniq
+    result = {}
+    for i in range(0,len(x)-k+1):
+        substring = x[i:i+k]
+        result[substring] = None
+    result_uniq = list(result.keys())
+    return result_uniq
     ...
-unique_kmers('tatatatatgtf',3)
 
-def count_kmers(x: str, k: int) -> dict[str, int]:
+def count_kmers(x: str, k: int):
     """
     Computer all k-mers of x and count how often they appear.
-
-    FIXME: do you want more tests here?
+    >>> count_kmers('agtagtcg', 3)
+    {'agt': 2, 'gta': 1, 'tag': 1, 'gtc': 1, 'tcg': 1}
     """
+    result = {}
+    for i in range(0,len(x)-k+1):
+        substring = x[i:i+k]
+        if substring in result:
+            result[substring] += 1
+        else:
+            result[substring] = 1
+    return result
     ...
