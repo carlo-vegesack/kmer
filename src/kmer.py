@@ -1,4 +1,4 @@
-"""Computing kmers of a string."""
+import doctest
 
 
 def kmer(x: str, k: int) -> list[str]:
@@ -10,15 +10,15 @@ def kmer(x: str, k: int) -> list[str]:
 
     FIXME: do you want more tests here?
     """
-    for letter in x:
-        i = 0
-        while i < k:
-            result = list.append
+    result = []
+    for i in range(0,len(x)-k+1):
+        substring = x[i:i+k]
+        result.append(substring)
+    return result
 
 
         
-
-    ...
+... 
 
 
 def unique_kmers(x: str, k: int) -> list[str]:
@@ -27,8 +27,15 @@ def unique_kmers(x: str, k: int) -> list[str]:
 
     FIXME: do you want more tests here?
     """
+    # result = {}
+    # for i in range(0,len(x)-k+1):
+    #     substring = x[i:i+k]
+    #     result[substring] = None
+    # result_uniq = list(result.keys())
+    # print (result_uniq)
+    # return result_uniq
     ...
-
+unique_kmers('tatatatatgtf',3)
 
 def count_kmers(x: str, k: int) -> dict[str, int]:
     """
