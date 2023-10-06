@@ -1,7 +1,7 @@
 import doctest
 
 
-def kmer(x: str, k: int) -> list[str]:
+def kmer(x: str, k: int):
     """
     Computer all k-mers of x.
 
